@@ -34,53 +34,59 @@
 </head>
 
 <body>
+{#        {% if editor_Idle %}#}
+            <form action="{{ url_for( 'get_task') }}" method="POST">
+                {% if task == '' and editor_state =='idle'%}
+                    <br/><br/><h2><label class="label label-warning" >Select task for the Editor</label></h2><br/><br/>
+                    <select class="form-control form-control-sm" name="task_dd" id="task_dd">
+                            <option value="All">Select Task</option>
+                            <option value="assign">Assign article</option>
+                            <option value="review">Review article</option>
+                            <option value="publish">Send article to Publisher</option>
+                    </select><br/>
+                     <input type="hidden" id="previous_task" name="previous_task" value={{task}}>
+                {% elif task == 'assign' and editor_state=='assigning' %}
+                    <br/><br/><h2><label class="label label-warning" >Assign Article to a Journalist</label></h2><br/><br/>
+                    <select class="form-control form-control-sm" name="article_dd" id="article_dd">
+                            <option value="All">Select Article</option>
+                            <option value="covid">Article on Covid</option>
+                            <option value="election">Article on US elections</option>
+                            <option value="champ">Article on Champions League</option>
+                    </select><br/>
+                    <select class="form-control form-control-sm" name="journalist_dd" id="journalist_dd">
+                            <option value="All">Select Journalist</option>
+                            <option value="a">Journalist A</option>
+                            <option value="b">Journalist B</option>
+                            <option value="c">Journalist C</option>
+                    </select><br/>
+                    <input type="hidden" id="task_dd" name="task_dd" value="task_assigned">
+                    <input type="hidden" id="previous_task" name="previous_task" value={{task}}>
+                {% elif task == 'review' and editor_state=='reviewing' %}
+                    <br/><br/><h2><label class="label label-warning" >Select an article to review.</label></h2><br/><br/>
+                    <select class="form-control form-control-sm" name="article_dd" id="article_dd">
+                            <option value="All">Select Article</option>
+                            <option value="covid">Article on Covid</option>
+                            <option value="election">Article on US elections</option>
+                            <option value="champ">Article on Champions League</option>
+                    </select><br/>
+                    <input type="hidden" id="task_dd" name="task_dd" value="task_reviewed">
+                    <input type="hidden" id="previous_task" name="previous_task" value={{task}}>
+                {% elif task == 'publish' and editor_state=='sending' %}
+                     <br/><br/><h2><label class="label label-warning" >Select an article to send to publisher</label></h2><br/><br/>
+                     <select class="form-control form-control-sm" name="article_dd" id="article_dd">
+                            <option value="All">Select Article</option>
+                            <option value="covid">Article on Covid</option>
+                            <option value="election">Article on US elections</option>
+                            <option value="champ">Article on Champions League</option>
+                     <input type="hidden" id="task_dd" name="task_dd" value="task_sent">
+                     <input type="hidden" id="previous_task" name="previous_task" value={{task}}>
+                    </select><br/>
+                {% endif %}
 
-        <form action="{{ url_for( 'get_task') }}" method="POST">
-            {% if task == '' %}
-            <br/><br/><h2><label class="label label-warning" >Select task for the Editor</label></h2><br/><br/>
-            <select class="form-control form-control-sm" name="task_dd" id="task_dd">
-                    <option value="All">Select Task</option>
-                    <option value="assign">Assign article</option>
-                    <option value="review">Review article</option>
-                    <option value="publish">Send article to Publisher</option>
-            </select><br/>
-            {% elif task == 'assign' %}
-            <br/><br/><h2><label class="label label-warning" >Assign Article to a Journalist</label></h2><br/><br/>
-            <select class="form-control form-control-sm" name="article_dd" id="article_dd">
-                    <option value="All">Select Article</option>
-                    <option value="covid">Article on Covid</option>
-                    <option value="election">Article on US elections</option>
-                    <option value="champ">Article of Champions League</option>
-            </select><br/>
-            <select class="form-control form-control-sm" name="journalist_dd" id="journalist_dd">
-                    <option value="All">Select Journalist</option>
-                    <option value="a">Journalist A</option>
-                    <option value="b">Journalist B</option>
-                    <option value="c">Journalist C</option>
-            </select><br/>
-            <p id="task_dd" name = "task_dd" value = "task_assigned"></p>
-            {% elif task == 'review' %}
-            <br/><br/><h2><label class="label label-warning" >Select an article to review.</label></h2><br/><br/>
-             <select class="form-control form-control-sm" name="article_dd" id="article_dd">
-                    <option value="All">Select Article</option>
-                    <option value="covid">Article on Covid</option>
-                    <option value="election">Article on US elections</option>
-                    <option value="champ">Article of Champions League</option>
-            </select><br/>
-            {% elif task == 'publish' %}
-             <br/><br/><h2><label class="label label-warning" >Select an article to send to publisher</label></h2><br/><br/>
-             <select class="form-control form-control-sm" name="article_dd" id="article_dd">
-                    <option value="All">Select Article</option>
-                    <option value="covid">Article on Covid</option>
-                    <option value="election">Article on US elections</option>
-                    <option value="champ">Article of Champions League</option>
-            </select><br/>
-            {% endif %}
 
-
-            <input class="btn btn-success" type="Submit" value="Submit" >
+                <input class="btn btn-success" type="Submit" value="Submit" >
 {#            {% else %}#}
-{#            <input class="btn btn-success" type="button" value="Submit" onclick="alert('Editor is busy');" >#}
+{#            <p>Editor is Busy</p>#}
 {#            {% endif %}#}
     </form>
 
