@@ -1,3 +1,5 @@
+# Access to heroku app : https://nerve-center-automation.herokuapp.com/
+
 # Overview
 It takes a village to do structured journalism. Coordinating among so many disparate activities is a serious barrier. We believe that, if done right, smart automation tools can help. This team will attempt to use intelligent automation to coordinate developer activity, content production, and content presentation into a working structured journalism ecosystem.
 
@@ -32,5 +34,9 @@ Collectively, the team must have the following skill:
 # Workflow in progress (Details can be found in "Code --> Node-red" folder)
 
 1. Assignment workflow
+2. FSM Workflow
 
 # Database connection (Details in "Code --> Database" folder)
+
+# Deployment 
+1. Manual deployment in progress.
