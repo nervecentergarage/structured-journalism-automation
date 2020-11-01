@@ -1,0 +1,54 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build docker container for journalism automation
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Runs the docker build
+      - name: docker login
+        env:
+          HEROKU_EMAIL: ${{ secrets.HEROKU_ID }}
+          HEROKU_API_KEY: ${{ secrets.HEROKU_PASS }} 
+        run: |
+          docker login -u $HEROKU_EMAIL -p $HEROKU_API_KEY registry.heroku.com
+      # Runs the docker build
+      - name: docker web build
+        env:
+          HEROKU_APP_NAME: ${{secrets.HEROKU_APP_NM}}
+        run: |
+          docker build ./Code/Node-Red -t registry.heroku.com/$HEROKU_APP_NAME/web
+        
+      # Push the new image
+      - name: docker web push
+        env:
+          HEROKU_APP_NAME: ${{secrets.HEROKU_APP_NM}}  
+        run: |
+          docker push registry.heroku.com/$HEROKU_APP_NAME/web
+          
+        # Release the new Heroku conatiner
+      - name: heroku web container release
+        env:
+          HEROKU_APP_NAME: ${{secrets.HEROKU_APP_NM}}
+          HEROKU_API_KEY: ${{secrets.HEROKU_PASS}}
+          HEROKU_EMAIL: ${{secrets.HEROKU_ID}}
+        run: |
+          heroku container:login
+          heroku container:release -a ${{ secrets.HEROKU_APP_NM }} web
