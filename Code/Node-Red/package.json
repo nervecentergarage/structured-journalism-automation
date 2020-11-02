@@ -1,0 +1,24 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "cn-dashboard-nodes": "0.0.2",
+        "node-red-contrib-audio-convert": "0.0.7",
+        "node-red-contrib-cognitive-services": "~0.5.5",
+        "node-red-contrib-dsm": "~0.14.1",
+        "node-red-contrib-ffmpeg": "~0.1.1",
+        "node-red-contrib-finite-statemachine": "~1.0.4",
+        "node-red-contrib-fsm": "0.0.6",
+        "node-red-contrib-play-audio": "~2.5.0",
+        "node-red-contrib-play-audio-fast": "0.0.1",
+        "node-red-contrib-play-audio-file": "0.0.1",
+        "node-red-contrib-xstate-machine": "~1.1.1",
+        "node-red-dashboard": "~2.23.3",
+        "node-red-node-ui-lineargauge": "~0.3.6",
+        "node-red-node-ui-list": "~0.3.2",
+        "node-red-node-ui-table": "~0.3.5",
+        "node-red-node-ui-vega": "~0.1.2"
+    }
+}
