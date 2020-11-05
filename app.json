@@ -3,7 +3,7 @@
   "description": "Heroku deployment.",
   "keywords": [ "Node-RED", "IoT", "Internet of Things", "node.js", "Node", "NodeRED", "Nodejs", "Blynk", "Blynk Cloud" ],
   "website": "http://nodered.org/",
-  "repository": "https://github.com/Rohitlnarayan/SandBoxNodeRedMaster.git",
+  "repository": "https://github.com/nervecentergarage/structured-journalism-automation.git",
   "logo": "http://nodered.org/node-red.png",
   "success_url": "/editor",
   "env": {
