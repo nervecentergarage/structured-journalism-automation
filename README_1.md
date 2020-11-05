@@ -1,5 +1,5 @@
 
-# 1. Deploying Node-RED into Heroku  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/Rohitlnarayan/SandBoxNodeRedMaster)
+# 1. Deploying Node-RED into Heroku  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/nervecentergarage/structured-journalism-automation)
 
 # 2. Set Username and Password for your Flow Editor
 * NODE_RED_a_USERNAME - Create a user name and password.
