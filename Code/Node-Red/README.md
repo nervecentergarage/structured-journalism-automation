@@ -57,7 +57,7 @@ msg payload node - to debug and display in the sidebar
 	Trigger the node timestamp upon each different transition state.
 	
 ---------------------------------------------------------------------------
-# Steps for MOngo-DB integration.
+# Steps for Mongo-DB integration.
 1. Folow the steps in the link to install the Mongo-DB.
 
 https://docs.mongodb.com/manual/installation/
