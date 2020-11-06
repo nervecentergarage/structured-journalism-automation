@@ -55,4 +55,45 @@ msg payload node - to debug and display in the sidebar
 
 ## Steps to display the transition of different states:
 	Trigger the node timestamp upon each different transition state.
+	
+---------------------------------------------------------------------------
+# Steps for MOngo-DB integration.
+1. Folow the steps in the link to install the Mongo-DB.
+
+https://docs.mongodb.com/manual/installation/
+
+2. In the node-red make sure below mentioned nodes are installed from the manage palette.
+
+	A.	Node : "mongodb3 in"
+
+		Node name : node-red-contrib-mongodb3 : mongodb3 in
+
+		NODE FUNCTION: Calls a MongoDB collection method based on the selected operator.
+		
+	B.	Node : node-red : inject
+			
+		node name : Inject node
+		
+		Node function : Injects a message into a flow either manually or at regular intervals. The message payload can be a variety of types, including 		strings, JavaScript objects or the current time.
+	
+	C.	Node : HTTP request
+	
+		Node name : node-red : http request
+		
+		Node function : Sends HTTP requests and returns the response.
+	
+
+3. Import the DB-Integration flow available in the Git reprository.
+
+4. Generate the connection string from mongo-db. Refere the link to generate the connection string https://docs.mongodb.com/manual/reference/connection-string/
+
+5. In the "mongodb 3" node, go to th eproperty tab to see the name as "URL", insert the connection string here.
+
+6. Upon successful installation, inject the timestamp to see the data inserted into the Mongo-DB collection.
+
+
+
+
+
+
 
