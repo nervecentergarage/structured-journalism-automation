@@ -1,43 +1,33 @@
+# AI Assisted Journalism
+
 # Access to heroku app : 
 https://auto-nrv-cntr.herokuapp.com/
 
 # Overview
-It takes a village to do structured journalism. Coordinating among so many disparate activities is a serious barrier. We believe that, if done right, smart automation tools can help. This team will attempt to use intelligent automation to coordinate developer activity, content production, and content presentation into a working structured journalism ecosystem.
+It takes a village to do structured journalism. Coordinating among so many disparate activities is a serious barrier. We believe that, if done right, smart automation tools can help. Our aim is to use intelligent automation to coordinate developer activity, content production, and content presentation into a working structured journalism ecosystem.
+which will accelerate the process in getting news published since it requires multiple level support and multiple actors involved.
+We also integrated fuctionality to create on the go transcript of interview using audio to text conversion method.
+Creation of rich content for specific audience is something untouched in majority of newsroom and we tried to present it.
 
-# Key Team Skills
-Collectively, the team must have the following skill:
-1. Finite-state machines
-1. Flask
+## We used Node Red as our platform to replicate and orchestrate different services to have an end-to-end workflow of Newsroom. 
+1. The application is IoT based and can be used to include further advancements.
+1. Application will outline actors of Newsroom in form of Finite State Machines.
+1. Use Azure cognitive services to have transcript ready on the go.
+1. Use sentiment analysis to provide multi feature story around a topic.
+1. Application will create story content ready for consumption and publishing within minutes.
+1. Seamless communication between actors, Sponsor, Editor, Journalist and Publisher, inside newsroom.
+1. Production ready and distribution ready application through Docker
+
+# Tools – Technologies Used
 1. Node Red
-1. JavaScript
-1. JSON
-1. MongoDB
-1. Docker
 1. Azure
-
-# Roles and Responsibilities
-1. **(3) Community simulation developers**-- Use Flask to create finite-state machine simulations of content developers, expert communities, and fact checkers. Publish APIs for the simulations. Read from and write to the MongoDB content repository.
-1. **(1) MongoDB repository and content developer**-- Create a content repository in MongoDB. Populate it with JSON data that the community simulators need to run their simulations.
-1. **(1) Node-Red flow developer**-- Use Node-Red to coordinate across the community simulations.
-1. **(1) Node-Red dashboard developer**-- Use Node-Red to create a dashboard that provides a summary of what is happening in the Node-Red flows.
-1. **(1) Platform engineer**-- Package Node-Red and community simulations into a Docker container. Publish and run the container in Azure.
-
-
-# Codes in progress (Details can be found in "Code --> Finite State Machine" folder)
-
-1. FSM Editor
-
-2. FSM Journalist
-
-3. FSM Publisher
-
-
-# Workflow in progress (Details can be found in "Code --> Node-red" folder)
-
-1. Assignment workflow
-2. FSM Workflow
-
-# Database connection (Details in "Code --> Database" folder)
-
-# Deployment 
-1. Manual deployment in progress.
+1. Finite State Machines
+1. Sentiment Analysis
+1. Docker
+1. CI/CD
+1. MS Teams
+1. Python
+1. Angular/JS
+1. HTML CSS
+1. Mongo DB
+1. JSON
