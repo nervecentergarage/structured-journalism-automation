@@ -20,7 +20,7 @@ Creation of rich content for specific audience is something untouched in majorit
 
 # Tools – Technologies Used
 1. Node Red
-1. Azure
+1. IBM Watson
 1. Finite State Machines
 1. Sentiment Analysis
 1. Docker
